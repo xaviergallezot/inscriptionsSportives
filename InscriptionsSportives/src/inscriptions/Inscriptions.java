@@ -93,7 +93,7 @@ public class Inscriptions implements Serializable
 	 * @return
 	 */
 	
-	public Equipe createEquipe(String nom, Personne entraineur)
+	public Equipe createEquipe(String nom)
 	{
 		Equipe equipe = new Equipe(this, nom);
 		candidats.add(equipe);
@@ -197,7 +197,10 @@ public class Inscriptions implements Serializable
 		Personne tony = inscriptions.createPersonne("Tony", "Dent de plomb", "azerty"), 
 				boris = inscriptions.createPersonne("Boris", "le Hachoir", "ytreza");
 		flechettes.add(tony);
-		Equipe lesManouches = inscriptions.createEquipe("Les Manouches", boris);
+		Equipe lesManouches = inscriptions.createEquipe("Les Manouches");
+		lesManouches.add(boris);
+		lesManouches.add(tony);
+		System.out.println(inscriptions);
 		lesManouches.delete();
 		System.out.println(inscriptions);
 		try
