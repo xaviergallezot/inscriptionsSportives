@@ -128,6 +128,24 @@ public class Inscriptions implements Serializable
 		return inscriptions;
 	}
 
+	/**
+	 * Efface toutes les données (compétitions, équipes et personnes).
+	 */
+	
+	public void reinitialiser()
+	{
+		inscriptions = new Inscriptions();
+	}
+
+	/**
+	 * Efface toutes les modifications depuis la dernière sauvegarde.
+	 */
+	
+	public Inscriptions recharger()
+	{
+		inscriptions = null;
+		return getInscriptions();
+	}
 	
 	private static Inscriptions readObject()
 	{
