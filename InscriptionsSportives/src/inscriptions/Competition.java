@@ -45,6 +45,17 @@ public class Competition implements Comparable<Competition>, Serializable
 	 * @return
 	 */
 	
+	public boolean inscriptionsOuvertes()
+	{
+		// TODO retourner vrai si la date système est ultérieure à la date de clôture.
+		return true;
+	}
+	
+	/**
+	 * Retourne la date de cloture des inscriptions.
+	 * @return
+	 */
+	
 	public Date getDateCloture()
 	{
 		return dateCloture;
