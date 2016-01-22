@@ -129,16 +129,19 @@ public class Inscriptions implements Serializable
 	}
 
 	/**
-	 * Efface toutes les données (compétitions, équipes et personnes).
+	 * Retourne un object inscriptions vide. Ne modifie pas les compétitions
+	 * et candidats déjà existants.
 	 */
 	
-	public void reinitialiser()
+	public Inscriptions reinitialiser()
 	{
 		inscriptions = new Inscriptions();
+		return getInscriptions();
 	}
 
 	/**
-	 * Efface toutes les modifications depuis la dernière sauvegarde.
+	 * Efface toutes les modifications sur Inscriptions depuis la dernière sauvegarde.
+	 * Ne modifie pas les compétitions et candidats déjà existants.
 	 */
 	
 	public Inscriptions recharger()
