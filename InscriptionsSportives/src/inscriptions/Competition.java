@@ -41,6 +41,15 @@ public class Competition implements Comparable<Competition>, Serializable
 	}
 	
 	/**
+	 * Modifie le nom de la compétition.
+	 */
+	
+	public void setNom(String nom)
+	{
+		this.nom = nom ;
+	}
+	
+	/**
 	 * Retourne vrai si les inscriptions sont encore ouvertes, 
 	 * faux si les inscriptions sont closes.
 	 * @return
