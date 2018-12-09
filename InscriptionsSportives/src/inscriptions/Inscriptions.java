@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.Scanner;
 import java.time.LocalDate;
 import java.util.SortedSet;
 import java.util.TreeSet;
@@ -240,7 +241,38 @@ public class Inscriptions implements Serializable
 	}
 	
 	public static void main(String[] args)
-	{
+	{	
+		Scanner tutu = new Scanner(System.in);
+		System.out.println("Bienvenu dans le menu que voulez vous faire ?");
+		System.out.println("Inscription '1'         Afficher les equipes '2'          Voir les competition '3'          Voir les participants '4' ");
+		int c ;
+		c = tutu.nextInt() ;
+		switch (c) 
+		{
+			case 1 : System.out.println("Vous avez ouvert les inscritpion");break;
+			case 2 : System.out.println("Voici les equipes" );break;
+			case 3 :System.out.print("Voici les compétion");break ;
+			case 4 : System.out.println("Voici les participants") ;
+					System.out.println("Voulez vous modifier la listes des participants ?") ;
+					System.out.println(" Oui '1' Non '2' ");
+					c = tutu.nextInt();
+					switch (c) 
+					{
+						case 1 : System.out.println("Voulez vous : ");
+								 System.out.println("Ajouter des participants (1)  Supprimer des participants (2)  Modifier des participants (3)");
+								 c = tutu.nextInt();
+								 switch (c) 
+									{
+										case 1 : System.out.println("Saississez votre participants");break;
+										case 2 : System.out.println("Saisissez le participants a enlever" );break;
+										case 3 :System.out.print("Saississiez le participant a modifier");break ;
+										default : System.out.println("Choississez 1,2,3");
+									};
+								 
+					};break ;
+			default : System.out.println("Vous vous etes trompé saississez 1,2,3,4 selon votre choix");break;
+
+		}
 		Inscriptions inscriptions = Inscriptions.getInscriptions();
 		Competition flechettes = inscriptions.createCompetition("Mondial de flÃ©chettes", null, false);
 		Personne tony = inscriptions.createPersonne("Tony", "Dent de plomb", "azerty"), 
